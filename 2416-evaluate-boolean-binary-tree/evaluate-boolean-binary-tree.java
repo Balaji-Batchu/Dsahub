@@ -15,11 +15,6 @@
  */
 class Solution {
     public boolean evaluateTree(TreeNode root) {
-        // if(root != null){
-        //     if(root.left != null){
-
-        //     }
-        // }
         if(root.left == null && root.right == null){
             if(root.val == 1) return true;
             else return false;
