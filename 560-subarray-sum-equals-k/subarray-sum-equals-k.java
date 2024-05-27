@@ -8,7 +8,7 @@ class Solution {
         for(int x: nums){
             sum += x;
 
-            if(prevSums.containsKey(sum - k)) count = count + prevSums.get(sum - k);
+            if(prevSums.containsKey(sum - k)) count += prevSums.get(sum - k);
             
             prevSums.put(sum, prevSums.getOrDefault(sum,0) + 1);
         }
