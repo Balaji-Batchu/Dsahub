@@ -11,7 +11,7 @@ class Solution {
                 n --;
                 index ++;
             }
-            hm.put(x, 0);
+            hm.put(x,   0);
         }
         int[] rem = new int[arr1.length - index];
         int i2 = 0;
