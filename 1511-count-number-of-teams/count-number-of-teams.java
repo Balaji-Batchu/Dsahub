@@ -2,7 +2,7 @@ class Solution {
     public int numTeams(int[] rating) {
         int ans = 0;
         int len = rating.length;
-        for(int i = 1; i <= len - 1; i ++){
+        for(int i = 1; i < len - 1; i ++){
             int mid = rating[i];
             int minl = 0;
             int maxl = 0;
