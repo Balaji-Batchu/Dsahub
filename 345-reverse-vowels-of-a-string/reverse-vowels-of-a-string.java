@@ -1,7 +1,6 @@
 class Solution {
     public String reverseVowels(String s) {
         StringBuilder ans = new StringBuilder(s);
-        Stack<Character> vowels = new Stack<>();
 
         int left = 0;
         int right = s.length() - 1;
