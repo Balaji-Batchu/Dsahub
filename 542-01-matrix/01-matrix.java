@@ -16,7 +16,7 @@ class Solution {
         }
 
         int[] rowind = {-1, 0, 1, 0};
-        int[] colind = {0, +1, 0,   -1};
+        int[] colind = {0, +1, 0, -1};
         while(! dq.isEmpty()){
             Pair pair = dq.poll();
             ans[pair.row][pair.col] = pair.distance;
