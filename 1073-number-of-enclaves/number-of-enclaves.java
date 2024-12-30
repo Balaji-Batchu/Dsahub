@@ -9,7 +9,6 @@ class Solution {
                 if(x == 0 || y == 0 || x == n - 1 || y == m - 1){
                     if(grid[x][y] == 1){
                         dq.add(new int[]{x, y});
-                        // visited[x][y] = true;
                     }
                 }
             }
