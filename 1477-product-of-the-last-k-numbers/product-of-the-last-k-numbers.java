@@ -1,6 +1,6 @@
 class ProductOfNumbers {
 
-    ArrayList<Integer> stream;
+    private ArrayList<Integer> stream;
     public ProductOfNumbers() {
         stream = new ArrayList<>();    
     }
