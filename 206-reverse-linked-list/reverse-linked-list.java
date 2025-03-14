@@ -8,32 +8,16 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-// class Solution {
-//     public ListNode reverseList(ListNode head) {
-//         ListNode start = head;
-//         ListNode prev = null;
-
-//         while(start != null){
-//             ListNode temp = start.next;
-//             start.next = prev;
-//             prev = start;
-//             start = temp;
-//         }
-
-//         return prev;
-//     }
-// }
-
-class Solution{
+class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode start = head;
         ListNode prev = null;
+        ListNode curr = head;
 
-        while(start != null){
-            ListNode temp = start.next;
-            start.next = prev;
-            prev = start;
-            start = temp;
+        while(curr != null){
+            ListNode nxt = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nxt;
         }
 
         return prev;
