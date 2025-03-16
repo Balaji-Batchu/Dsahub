@@ -2,24 +2,22 @@ class Solution {
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
 
+        int[] prev = intervals[0];
+        int r = 1, n = intervals.length, index = 0;
         List<int[]> ans = new ArrayList<>();
 
-        int n = intervals.length;
-        int[] prevInterval = intervals[0];
-
-        for(int x = 1; x < n; x ++){
-            int[] currentInterval = intervals[x];
-
-            if(currentInterval[0] <= prevInterval[1]){
-                prevInterval[1] = Math.max(currentInterval[1], prevInterval[1]);
+        for(int i = 1; i < intervals.length; i ++){
+            int[] interval = intervals[i];
+            if(interval[0] <= prev[1]){
+                prev[1] = Math.max(prev[1], interval[1]);
             }
             else{
-                ans.add(prevInterval);
-                prevInterval = currentInterval;
+                ans.add(prev);
+                prev = interval;
             }
         }
 
-        ans.add(prevInterval);
+        ans.add(prev);
 
         return ans.toArray(new int[ans.size()][]);
     }
