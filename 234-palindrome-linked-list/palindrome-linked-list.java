@@ -10,7 +10,6 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        Stack<ListNode> st = new Stack<>();
         ListNode slow = head, fast = head;
 
         while(fast != null && fast.next != null){
@@ -18,25 +17,25 @@ class Solution {
             fast = fast.next.next;
         }
 
-        ListNode start = head;
 
-        while(start != slow) {
-            st.add(start);
-            start = start.next;
+        ListNode prev = null, curr = slow, next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
 
-        if(fast != null && fast.next == null)
-            st.add(slow);
+        ListNode first = head, second = prev;
 
-        System.out.println(st);
-        while(slow != null){
-            ListNode temp = st.pop();
-            if(temp.val != slow.val){
-                System.out.println("checking: " + temp.val + " curr: " + slow.val);
+        while(second != null){
+            if(first.val != second.val){
                 return false;
-            } 
+            }
 
-            slow = slow.next;
+            first = first.next;
+            second = second.next;
         }
 
         return true;
