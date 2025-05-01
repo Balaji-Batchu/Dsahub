@@ -15,19 +15,18 @@
  */
 class Solution {
     public List<Integer> rightSideView(TreeNode root) {
-        TreeMap<Integer, Integer> map = new TreeMap<>();
-        preOrder(root, map, 0);
-
-        // System.out.println(map);
-        return new ArrayList<>(map.values());
+        List<Integer> ans = new ArrayList<>();
+        preOrder(root, ans, 0);
+        return ans;
     }
 
-    public static void preOrder(TreeNode root, TreeMap<Integer, Integer> map, int level) {
+    public static void preOrder(TreeNode root, List<Integer> list, int level) {
         if(root == null) return;
 
-        map.put(level, root.val);
-        preOrder(root.left, map, level + 1);
-        preOrder(root.right, map, level + 1);
+        if(list.size() == level)
+            list.add(root.val);
+        preOrder(root.right, list, level + 1);
+        preOrder(root.left, list, level + 1);
     }
 }
 
