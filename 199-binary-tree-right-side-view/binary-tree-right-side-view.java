@@ -29,13 +29,3 @@ class Solution {
         preOrder(root.left, list, level + 1);
     }
 }
-
-class Node{
-    TreeNode root;
-    int level;
-
-    Node(TreeNode root, int level){
-        this.root = root;
-        this.level = level;
-    }
-}
