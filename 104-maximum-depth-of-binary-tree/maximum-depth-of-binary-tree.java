@@ -15,19 +15,10 @@
  */
 class Solution {
     public int maxDepth(TreeNode root) {
-        List<TreeNode> dq = new ArrayList<>();
-        if(root != null) dq.add(root);
-        int count = 0;
+        if(root == null) return 0;
 
-        while(!dq.isEmpty()){
-            int k = dq.size();
-            count ++;
-            for(int temp = 0; temp < k; temp ++){
-                TreeNode curr = dq.remove(0);
-                if(curr.left != null) dq.add(curr.left);
-                if(curr.right != null) dq.add(curr.right);
-            }
-        }
-        return count;
+        int maxi = Math.max(maxDepth(root.left), maxDepth(root.right));
+
+        return maxi + 1;
     }
 }
