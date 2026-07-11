@@ -5,13 +5,11 @@ class Solution {
         int arraySize = nums.length;
 
         while(right < arraySize) {
-            if(nums[right] == val) {
-                right ++;
-            } else {
+            if(nums[right] != val) {
                 nums[left] = nums[right];
                 left ++;
-                right ++;
-            }
+            }   
+            right ++;
         }
 
         return left;
