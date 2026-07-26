@@ -1,17 +1,15 @@
 class Solution {
     public int maxProfit(int[] prices) {
-        int left = 0;
-        int right = 1;
-        int arrSize = prices.length;
+        int left = 0, right = 1, n = prices.length;
         int maxProfit = 0;
 
-        while(right < arrSize) {
-            if(prices[left] < prices[right]) {
-                maxProfit = Math.max(maxProfit, prices[right] - prices[left]);
+        while(right < n) {
+            if(prices[right] < prices[left]) {
+                left = right;
                 right ++;
             } else {
-                left = right;
-                right = right + 1;
+                maxProfit = Math.max(maxProfit, prices[right] - prices[left]);
+                right ++;
             }
         }
         return maxProfit;
