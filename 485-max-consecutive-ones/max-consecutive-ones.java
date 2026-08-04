@@ -5,9 +5,12 @@ class Solution {
         for(int x: nums) {
             if(x == 1) {
                 temp ++;
+            } else {
                 maxi = Math.max(maxi, temp);
-            } else temp = 0;
+                temp = 0;
+            } 
         }
+        maxi = Math.max(maxi, temp);
         return maxi;
     }
 }
