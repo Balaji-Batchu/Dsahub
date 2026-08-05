@@ -3,9 +3,10 @@ class Solution {
         int left = 0, right = height.length - 1, maxArea = 0;
 
         while(left < right) {
-            maxArea = Math.max((Math.min(height[left], height[right]) * (right - left)), maxArea);
+            int i = height[left], j = height[right];
+            maxArea = Math.max((Math.min(i, j) * (right - left)), maxArea);
 
-            if(height[left] < height[right]) left ++;
+            if(i < j) left ++;
             else right --;
         }
 
