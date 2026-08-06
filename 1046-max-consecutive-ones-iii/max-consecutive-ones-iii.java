@@ -5,15 +5,17 @@ class Solution {
         int temp = 0;
 
         while(right < n) {
-            if(nums[right] == 0) temp ++;
-
-            if(temp > k) {
-                if(nums[left] == 0) temp --;
-                left ++;
+            if(nums[right] == 0) {
+                temp ++;
             }
 
-            if(temp <= k) maxLength = Math.max(maxLength, (right - left) + 1);
-
+            while(temp > k) {
+            if(nums[left] == 0) {
+                    temp --;
+                }
+                left ++;
+            }
+            maxLength = Math.max(maxLength, (right - left) + 1);
             right ++;
         }
 
