@@ -11,7 +11,6 @@ class Solution {
         }
 
         for (int pointer = 0; pointer < n; pointer ++) {
-            System.out.println("left: " + prefixSum[pointer] + " right: " + (prefixSum[n] - prefixSum[pointer + 1]));
             if(prefixSum[pointer] == (prefixSum[n] - prefixSum[pointer + 1])) return pointer;
         }
         return -1; 
