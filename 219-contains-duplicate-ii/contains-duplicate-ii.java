@@ -4,10 +4,8 @@ class Solution {
         int n = nums.length;
 
         for(int x = 0; x < n; x ++) {
-            if(map.containsKey(nums[x])) {
-                if(Math.abs(map.get(nums[x]) - x) <= k) return true;
-            } 
-            map.put(nums[x], x);
+            Integer prev = map.put(nums[x], x);
+            if(prev != null && Math.abs(x - prev) <= k) return true;
         }
 
         return false;
