@@ -10,6 +10,6 @@ class Solution {
                 map.put(nums[x], x);
             }
         }
-        return new int[]{-1,-1};
+        return new int[]{};
     }
 }
