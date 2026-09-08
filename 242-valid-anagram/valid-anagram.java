@@ -7,7 +7,6 @@ class Solution {
         }
 
         for(char c: t.toCharArray()) {
-            if(arr[c - 'a'] == 0) return false;
             arr[c - 'a'] --;
         }
 
